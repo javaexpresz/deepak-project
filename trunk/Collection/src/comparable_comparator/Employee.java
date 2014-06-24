@@ -1,43 +1,47 @@
 package comparable_comparator;
 
-import java.util.TreeSet;
-
-class Employee1 {
-int eid;
-String name;
- Employee1(){}
- Employee1(int eid, String name) {
-	super();
-	this.eid = eid;
+public class Employee implements Comparable{
+ int id;
+ String name;
+ int salary;
+public Employee(){}
+public Employee(int id, String name, int salary) {
+	this.id = id;
+	this.name = name;
+	this.salary = salary;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
 	this.name = name;
 }
-public String toString(){
-	return eid+"--"+name;
+public int getSalary() {
+	return salary;
 }
-public int compareTo(Object obj){
-	int eid1=this.eid;
-	Employee1 e=(Employee1)obj;
-	int eid2=e.eid;
-	if(eid1<eid2)
-		return -1;
-	else if(eid1>eid2)
-		return 1;
-	else return 0;
-}
- }
-public class Employee {
-	public static void main(String[] args) {
-		Employee1 e1=new Employee1(12, "sri");
-		Employee1 e2=new Employee1(10, "nivas");
-		Employee1 e3=new Employee1(18, "dande");
-		Employee1 e4=new Employee1(19, "deepak");
-		Employee1 e5=new Employee1(15, "goswami");
-		TreeSet t1=new TreeSet();
-		t1.add(e1);
-		t1.add(e2);
-		t1.add(e3);
-		t1.add(e4);
-		t1.add(e5);
-	}
+public void setSalary(int salary) {
+	this.salary = salary;
 }
 
+public String toString() {
+	return "id : " + id + " name : " + name + " salary :  "+ salary;
+}
+
+	public int compareTo(Object o) {
+		int id1=this.id;
+		Employee e1=(Employee)o;
+		int id2=e1.id;
+		if(id1>id2){
+			return +1;
+		}else if(id1<id2){
+			return -1;
+		}
+		return 0;
+	}
+}
