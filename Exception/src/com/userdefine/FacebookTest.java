@@ -18,6 +18,7 @@ class InvalidUserId extends Exception {
 }
 
 class Facebook {
+	
 	public static void chat(String userId) {
 		try {
 			if (userId.equals("dkgoswami")) {
