@@ -10,17 +10,18 @@ class InvalidUserId extends Exception {
 		this.emailId = emailId;
 	}
 	
-	public String getMessage2() {
+	/*public String getMessage2() {
 		return "emailId "+ emailId+ " must be ends with @gmail.com/@hotmail.com";
-	}
+	}*/
 	@Override
 	public String toString() {
 		
-		return getMessage2();
+		//return getMessage2();
+		return "emailId "+ emailId+ " must be ends with @gmail.com/@hotmail.com";
 	}
 }
 
-class Facebook {
+class Email {
 	
 	public static void chat(String emailId) {
 		try {
@@ -35,11 +36,11 @@ class Facebook {
 	}
 }
 
-public class Client1 {
+public class EmailIdValidator {
 public static void main(String[] args)throws Exception {
 	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 	System.out.println("Enter the Email Id");
 	String emailId=br.readLine();
-	Facebook.chat(emailId);
+	Email.chat(emailId);
 }
 }
