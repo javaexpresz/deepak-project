@@ -1,1 +1,2 @@
 TEst 2 git for git gui
+changed form remote repository.
